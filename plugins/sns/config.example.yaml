@@ -1,0 +1,15 @@
+plugins:
+  - ./plugins/sns
+
+sns:
+  auth:
+    access:    AUAKDO811UAYCUIAJQ			# this won't work lol
+    secret:    aU2v5SBoMM6ey1qQb8uHaT4czKlptNi81JswQ	# totally fake keys bro
+  options:
+    region:      'us-east-1'
+    topicArn:    'arn:aws:sns:us-east-1:012345678910:UptimeNotify'
+  event:
+    up:        true
+    down:      true
+    paused:    false
+    restarted: false
