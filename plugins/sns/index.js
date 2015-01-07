@@ -51,12 +51,13 @@
  */
 var AWS 		= require('aws-sdk');
 var fs			= require('fs');
-var CheckEvent		= require('./models/checkEvent.js');
+var CheckEvent		= require('../../../../models/checkEvent.js');
+var conf		= require('config');
 var ejs			= require('ejs');
 var moment 		= require('moment');
 
-exports.init = function(options) {
-	var config = options.config.sns;
+exports.init = function() {
+	var config = conf.sns;
 	var sns = new AWS.SNS({
 		apiVersion: '2010-03-31',
 		region: config.options.region,
@@ -72,7 +73,7 @@ exports.init = function(options) {
 			var renderOptions = {
 				check: check,
 				checkEvent: checkEvent,
-				url: options.config.url,
+				url: conf.url,
 				moment: moment,
 				filename: filename
 			};
