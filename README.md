@@ -13,26 +13,25 @@ To enable the plugin, two things need to be accomplished. First, add the plugin 
 
 ```sh
   exports.init = function() {
-    require('./sns').init();
+    require('uptime-sns').init();
   }
 ```
 
-Finally, add the following lines to the plugins section of your config file:
+Finally, create a new section in your config file for this plugin by adding the following lines to the very bottom:
 
 ```yaml
-  plugins:
-    sns:
-      auth:
-        user:		AWS_ACCESS_ID
-	secret:		AWS_SECRET_KEY
-      options:
-        region:		'us-east-1'
-        topicArn:	'arn:aws:sns:us-east-1:012345678910:Notify' # AWS target ARN
-      event:
-        up:		true
-        down:		true
-        paused:         false
-        restarted:      false
+sns:
+  auth:
+    user:		AWS_ACCESS_ID
+    secret:		AWS_SECRET_KEY
+  options:
+    region:		'us-east-1'
+    topicArn:		'arn:aws:sns:us-east-1:012345678910:Notify' # AWS target ARN
+  event:
+    up:			true
+    down:		true
+    paused:		false
+    restarted:		false
 ```
 
 An example configuration is provided in `config/config.example.yaml`.

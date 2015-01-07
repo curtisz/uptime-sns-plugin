@@ -5,12 +5,15 @@
  *
  * Installation
  * ------------
- * This plugin is disabled by default. To enable it, add its entry 
- * to the `plugins` key of the configuration:
+ * Install this plugin using npm:
+ * 
+ *   $ npm install uptime-sns
  *
- *   // in config/production.yaml
- *   plugins:
- *     - ./plugins/sns
+ * Now add the following lines to plugins/index.js:
+ * 
+ *   exports.init = function() {
+ *     require('uptime-sns').init();
+ *   }
  *
  * Usage
  * -----
@@ -48,7 +51,7 @@
  */
 var AWS 		= require('aws-sdk');
 var fs			= require('fs');
-var CheckEvent 	= require('../../models/checkEvent.js');
+var CheckEvent		= require('./models/checkEvent.js');
 var ejs			= require('ejs');
 var moment 		= require('moment');
 
