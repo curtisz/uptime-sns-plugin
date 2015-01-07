@@ -1,0 +1,27 @@
+{
+  "name": "uptime-sns",
+  "version": "0.0.1",
+  "description": "An AWS SNS plugin for Uptime",
+  "main": "plugins/sns/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "aws-sdk": "2.1.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/curtisz/uptime-sns.git"
+  },
+  "keywords": [
+    "uptime",
+    "aws",
+    "sns"
+  ],
+  "author": {
+    "name": "Curtis Zimmerman",
+    "email": "software@curtisz.com"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}

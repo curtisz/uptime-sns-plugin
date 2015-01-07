@@ -52,7 +52,7 @@ var CheckEvent 	= require('../../models/checkEvent.js');
 var ejs			= require('ejs');
 var moment 		= require('moment');
 
-exports.initWebApp = function(options) {
+exports.init = function(options) {
 	var config = options.config.sns;
 	var sns = new AWS.SNS({
 		apiVersion: '2010-03-31',
